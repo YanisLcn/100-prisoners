@@ -1,0 +1,55 @@
+maxNumberOfBackUps: 2
+cycleThroughBackUps: 1
+
+defaultIndent: "\t"
+removeTrailingWhitespaces: 1
+
+lookForAlignDelims:
+  tabular:
+    multiColumnGrouping: 1
+    spacesBeforeAmperSound: 2
+  tabularx:
+    multiColumnGrouping: 1
+    spacesBeforeAmperSound: 2
+  longtable:
+    multiColumnGrouping: 1
+    spacesBeforeAmperSound: 2
+  array:
+    multiColumnGrouping: 1
+    spacesBeforeAmperSound: 2
+  matrix:
+    multiColumnGrouping: 1
+    spacesBeforeAmperSound: 2
+  aligned:
+    multiColumnGrouping: 1
+    spacesBeforeAmperSound: 2
+
+indentAfterItems:
+  itemize: 1
+  itemize*: 1
+  enumerate: 1
+  enumerate*: 1
+  description: 1
+  description*: 1
+  list: 1
+
+indentAfterHeadings:
+  subsection:
+    indentAfterThisHeading: 1
+    level: 1
+  paragraph:
+    indentAfterThisHeading: 1
+    level: 2
+
+indentRules:
+  item: "      "
+
+noAdditionalIndent:
+  item: 0
+
+modifyLineBreaks:
+  preserveBlankLines: 0
+  condenseMultipleBlankLinesInto: 1
+  environments:
+    DBSFinishesWithLineBreak: 0
+    DBSStartsOnOwnLine: -1
