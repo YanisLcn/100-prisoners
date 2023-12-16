@@ -54,13 +54,13 @@ for i in range(nb_of_iterations):
         cmp_alea += 1
 
 print(
-    "Avec la méthode aléatoire, les prisonniers ont survécu "
-    + str(cmp_alea)
-    + "/"
-    + str(nb_of_iterations)
-    + " fois, soit un taux de réussite à hauteur de "
-    + str(cmp_alea * 100 / nb_of_iterations)
-    + "%\n"
+    "Avec la méthode aléatoire, les prisonniers ont survécu",
+    cmp_alea,
+    "/",
+    nb_of_iterations,
+    "fois, soit un taux de réussite à hauteur de",
+    cmp_alea * 100 / nb_of_iterations,
+    "%\n",
 )
 
 print("Ensuite, la méthode optimale :")
@@ -72,11 +72,11 @@ for i in range(nb_of_iterations):
         cmp_opt += 1
 
 print(
-    "Avec la méthode optimale, les prisonniers ont survécu "
-    + str(cmp_opt)
-    + "/"
-    + str(nb_of_iterations)
-    + " fois, soit un taux de réussite à hauteur de "
-    + str(cmp_opt * 100 / nb_of_iterations)
-    + "%\n"
+    "Avec la méthode optimale, les prisonniers ont survécu",
+    cmp_opt,
+    "/",
+    nb_of_iterations,
+    "fois, soit un taux de réussite à hauteur de",
+    cmp_opt * 100 / nb_of_iterations,
+    "%\n",
 )
