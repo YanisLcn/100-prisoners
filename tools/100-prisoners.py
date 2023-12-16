@@ -34,7 +34,7 @@ def launch_random():
     for i in range(nb_of_prisoners):
         # La fonction sample(l, n) renvoie une liste composée de n éléments distincts de l choisis aléatoirement
         random_choices = sample(boxes, nb_of_prisoners // 2)
-        if not i in random_choices:
+        if i not in random_choices:
             return False
     return True
 
