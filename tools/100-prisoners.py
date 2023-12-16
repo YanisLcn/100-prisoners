@@ -43,7 +43,7 @@ def launch_random():
 nb_of_prisoners = 100
 boxes = [i for i in range(nb_of_prisoners)]
 
-nb_of_iterations = 100000
+nb_of_iterations = 10000
 
 print("Testons d'abord la méthode aléatoire :")
 
