@@ -1,8 +1,20 @@
+from random import shuffle
+
+
 def main():
-    input_string = input("Veuillez entrez votre permutation sous la forme d'une liste d'entiers séparée par des virugles.\n")
-    input_list = [int(s.strip()) for s in input_string.strip().split(",")] 
-    print(f"Voici les cycles de la permutation {input_list}:")
-    print(f"{permutation_cycles(input_list)}.\n")
+    # Vous avez la possibilité de générer une permutation aléatoire de n éléments
+    # ou de renseigner votre propre permutation
+    # N'oubliez pas de commenter/décommenter
+
+    # n = 5
+    # permutation = random_permutation_cycles(n)
+
+    # Vous pouvez entrer votre propre permutation
+    permutation = [1, 3, 2, 6, 4, 5]
+
+    print(f"Voici les cycles de la permutation {permutation}:")
+    print(f"{permutation_cycles(permutation)}")
+
 
 def permutation_cycles(permutation: list[int]):
     cycles = []
@@ -36,6 +48,16 @@ def permutation_cycles(permutation: list[int]):
         reordered_cycles.append(cycle[index:] + cycle[:index])
 
     return reordered_cycles
+
+
+def random_permutation_cycles(nb_elements):
+    assert nb_elements > 0
+
+    random_permutation = [x for x in range(1, nb_elements + 1)]
+    shuffle(random_permutation)
+
+    return random_permutation
+
 
 if __name__ == "__main__":
     main()
