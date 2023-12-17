@@ -1,22 +1,33 @@
-\documentclass{article}
-\usepackage[francais]{babel}
+\documentclass[a4paper]{article}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{authblk}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[nottoc,numbib]{tocbibind}
 
 \title{100-prisonniers}
-\date{27-11-2023}
-\author{GUETTEVILLE Nathan | SOAN Tony Ly | LACENNE Yanis | G4S12}
+\date{27/11/2023}
 
+\author{GUETTEVILLE Nathan}
+\author{LACENNE Yanis}
+\author{SOAN Tony Ly}
+
+\affil{G4S12}
+
+\renewcommand\Authands{ et }
 \begin{document}
-\pagenumbering{gobble}
+
 \maketitle
+
+\pagenumbering{gobble}
 \pagenumbering{arabic}
 
 \tableofcontents
 
 \newpage
-\section{Introduction}
-Présentation et description du problème des 100 prisionniers
 
-TODO : Tony Ly
+\input{Introduction}
 
 \section{Lien avec les mathématiques discrètes}
 Faire le lien avec les graphes et les permutations.
@@ -43,5 +54,7 @@ Notre annexe numérique est susceptible de contenir
 	\item Programme : Tester la probabilité de survie des prisonniers / Comparaison entre la stratégie aléatoire et la stratégie gagnante.
 	      (TODO : Nathan)
 \end{itemize}
+
+\input{References}
 
 \end{document}

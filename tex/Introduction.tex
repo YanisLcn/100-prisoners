@@ -1,0 +1,39 @@
+\section{Introduction}
+
+Le problème des 100 prisonniers \cite{100PrisonersProblem2023} se présente
+comme suit:
+le directeur d'une prison décide d'offrir une chance d'être libéré à 100 prisonniers
+condamnés à mort sous la forme d'une épreuve.
+Chacun d'eux porte un uniforme numéroté de 1 à 100, et dans 100 boîtes distinctes
+numérotées de 1 à 100 fermées, chacune contient un papier avec le numéro d'un
+prisonnier correspondant écrit dessus.
+Les papiers sont répartis aléatoirement dans les bôites et elles sont placées dans une
+salle isolée.
+
+Les prisonniers doivent y entrer tour à tour et seuls.
+Après le passage de chaque prisonnier, la salle est remise dans le même
+état qu'elle était initialement.
+
+Lors du passage dans cette salle, chacun d'eux à le droit d'ouvrir
+et de regarder dans 50 boîtes au plus,
+
+\begin{itemize}
+	\item
+	      si durant son tour un prisonnier parvient à trouver son propre numéro
+	      dans une boite, il peut alors quitter la salle.
+	\item
+	      s'il ne parvient pas à trouver son propre numéro, alors tous les
+	      prisonniers sont exécutés.
+\end{itemize}
+
+Les prisonniers ne peuvent pas communiquer entre eux durant l'épreuve,
+mais il peuvent établir une stratégie avant qu'elle ne commence.\\\\
+Ce problème présenté \cite{veritasiumRiddleThatSeems2022} par
+\href{https://www.veritasium.com/about}{Derek Muller}
+(alias \href{https://www.youtube.com/@veritasium}{Veritasium})
+est une version modifiée du problème
+initial \cite{miltersenCellProbeComplexity2007} formulé par
+\href{https://pure.au.dk/portal/en/persons/bromille%40cs.au.dk}{Peter Bro Miltersen}
+, et de la version \cite{flajoletAnalyticCombinatorics2009} de
+\href{https://fr.wikipedia.org/wiki/Philippe_Flajolet}{Philippe Flajolet}
+et \href{https://sedgewick.io/}{Robert Sedgewick}.
