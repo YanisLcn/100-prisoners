@@ -1,12 +1,12 @@
 \section{Introduction}
 
-Le problème des 100 prisonniers se présente comme suit:
+Le problème des 100 prisonniers \cite{100PrisonersProblem2023} se présente comme suit:
 le directeur d'une prison décide d'offrir une chance à 100 prisonniers
 condamnés à mort sous la forme d'une épreuve.
 Chacun d'eux porte un uniforme numéroté de 1 à 100, dans 100 boîtes
 numérotées de 1 à 100 et fermées, chacune contient un papier correspondant
 au numéro d'un seul prisonnier.
-Toutes ces boîtes sont placées dans une salle isolée. 
+Toutes ces boîtes sont placées dans une salle isolée.
 
 Les prisonniers doivent y entrer tour à tour et seuls.
 Après le passage de chaque prisonnier, la salle est remise dans le même
@@ -16,15 +16,22 @@ Lors du passage dans cette salle, chacun d'eux à le droit d'ouvrir
 et de regarder dans 50 boîtes au plus,
 
 \begin{itemize}
-    \item 
-    si durant son tour un prisonnier parvient à trouver son propre numéro
-    dans une boite, il peut alors quitter la salle.
-    \item
-    s'il ne pavient pas à trouver son propre numéro, alors tout les
-    prisonniers sont exécutés.
+	\item
+	      si durant son tour un prisonnier parvient à trouver son propre numéro
+	      dans une boite, il peut alors quitter la salle.
+	\item
+	      s'il ne pavient pas à trouver son propre numéro, alors tout les
+	      prisonniers sont exécutés.
 \end{itemize}
 
 Les prisonniers ne peuvent pas communiquer entre eux lors de l'épreuve,
 mais il peuvent établir une stratégie avant qu'elle ne commence.\\\\
-Ce problème est une version modifiée du problème formulé initialement par
-Peter Bro Miltersen, et de la version de Philippe Flajolet et Robert Sedgewick.
+Ce problème présenté \cite{veritasiumRiddleThatSeems2022} par
+\href{https://fr.wikipedia.org/wiki/Derek_Muller}{Derek Muller}
+(alias \href{https://www.youtube.com/@veritasium}{Veritasium})
+est une version modifiée du problème
+initial \cite{miltersenCellProbeComplexity2007} formulé par
+\href{https://pure.au.dk/portal/en/persons/bromille%40cs.au.dk}{Peter Bro Miltersen}
+, et de la version \cite{flajoletAnalyticCombinatorics2009} de
+\href{https://fr.wikipedia.org/wiki/Philippe_Flajolet}{Philippe Flajolet}
+et \href{https://en.wikipedia.org/wiki/Robert_Sedgewick_(computer_scientist)}{Robert Sedgewick}.

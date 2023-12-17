@@ -2,6 +2,9 @@
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{authblk}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[nottoc,numbib]{tocbibind}
 
 \title{100-prisonniers}
 \date{27/11/2023}
@@ -13,7 +16,6 @@
 \affil{G4S12}
 
 \renewcommand\Authands{ et }
-
 \begin{document}
 
 \maketitle
@@ -24,6 +26,7 @@
 \tableofcontents
 
 \newpage
+
 \input{Introduction}
 
 \section{Lien avec les mathématiques discrètes}
@@ -51,5 +54,7 @@ Notre annexe numérique est susceptible de contenir
 	\item Programme : Tester la probabilité de survie des prisonniers / Comparaison entre la stratégie aléatoire et la stratégie gagnante.
 	      (TODO : Nathan)
 \end{itemize}
+
+\input{References}
 
 \end{document}
