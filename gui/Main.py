@@ -101,7 +101,7 @@ def show_default_graph(graphs, colors):
 
     for graph, color, center in zip(graphs, colors, centered_pos.values()):
         scale = 0.01 * len(color)
-        pos = nx.circular_layout(graph, scale=scale, center=center)
+        pos = nx.shell_layout(graph, scale=scale, center=center)
         nx.draw(graph, pos, node_color=color, with_labels=True)
         nx.draw_networkx_labels(graph, pos, font_size=12, font_color="black")
     plt.show()
