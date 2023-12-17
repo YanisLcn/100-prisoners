@@ -10,7 +10,11 @@ def main():
 
 
 def random_basic_graph(size):
-    graphs =  [nx.DiGraph()]
+    """
+    Returns a random graph with `size` nodes.
+    Each node have the same color.
+    """
+    graphs = [nx.DiGraph()]
 
     default_ord = [i for i in range(size)]
     default_arr = array(default_ord)
@@ -22,6 +26,11 @@ def random_basic_graph(size):
 
 
 def gen_random_graph(size):
+    """
+    Returns a list of random graph of `size` nodes.
+    Connected components are separated into multiple subgraphs.
+    Each subgraph have a different color.
+    """
     default_ord = [i for i in range(size)]
     default_arr = array(default_ord)
     permutation = random.permutation(default_arr)
@@ -30,6 +39,10 @@ def gen_random_graph(size):
 
 
 def random_color(limit):
+    """
+    Returns a random color with `0.7` transparency.
+    Text can be write in black on those colors.
+    """
     colortuple = tuple([rd.random() for _ in range(3)] + [0.7])
     (red, green, blue, _) = colortuple
 
@@ -41,7 +54,9 @@ def random_color(limit):
 
 
 def __sorted_edges(graphs, size, default_ord, permutation):
-
+    """
+    Based on a permutation, define link between nodes.
+    """
     current = 0
     colors = [[]]
     current_color = random_color(size)
@@ -76,7 +91,6 @@ def __sorted_edges(graphs, size, default_ord, permutation):
 
 
 def show_default_graph(graphs, colors):
-
     cycles = len(graphs)
 
     centers = nx.Graph()
