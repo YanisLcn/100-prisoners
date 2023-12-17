@@ -9,44 +9,54 @@ def main():
     show_default_graph(graph, colors)
 
 
-def gen_random_graph(size, distinct=True):
-    G = nx.DiGraph()
+def random_basic_graph(size):
+    graphs =  [nx.DiGraph()]
 
     default_ord = [i for i in range(size)]
     default_arr = array(default_ord)
     permutation = random.permutation(default_arr)
 
-    if distinct:
-        return __sorted_edges(G, size, default_ord, permutation)
+    graphs[-1].add_edges_from([(i, permutation[i]) for i in range(size)])
+    nx.draw_circular(graphs[-1], with_labels=True)
+    return graphs, []
 
-    G.add_edges_from([(i, permutation[i]) for i in range(size)])
-    nx.draw_circular(graph, with_labels=True)
-    return G, []
+
+def gen_random_graph(size):
+    default_ord = [i for i in range(size)]
+    default_arr = array(default_ord)
+    permutation = random.permutation(default_arr)
+
+    return __sorted_edges([], size, default_ord, permutation)
 
 
 def random_color(limit):
     colortuple = tuple([rd.random() for _ in range(3)] + [0.7])
     (red, green, blue, _) = colortuple
-    
-    while (red*0.299 + green*0.587 + blue*0.114) > 186:
+
+    while (red * 0.299 + green * 0.587 + blue * 0.114) > 186:
         colortuple = tuple([rd.random() for _ in range(3)] + [0.7])
         (red, green, blue, _) = colortuple
 
     return colortuple
 
 
-def __sorted_edges(G, size, default_ord, permutation):
+def __sorted_edges(graphs, size, default_ord, permutation):
+
     current = 0
-    colors = []
+    colors = [[]]
     current_color = random_color(size)
+    graphs.append(nx.DiGraph())
+
     for _ in range(size):
-        colors.append(current_color)
+        colors[-1].append(current_color)
         next = permutation[current]
 
         if current != next:
-            G.add_edge(current, next)
+            graphs[-1].add_edge(current, next)
         else:
-            G.add_node(current)
+            graphs[-1].add_node(current)
+            graphs.append(nx.DiGraph())
+            colors += [[]]
             current_color = random_color(size)
 
         default_ord.remove(current)
@@ -58,15 +68,28 @@ def __sorted_edges(G, size, default_ord, permutation):
             current = next
         else:
             current = default_ord[0]
+            colors += [[]]
             current_color = random_color(size)
+            graphs.append(nx.DiGraph())
 
-    return G, colors
+    return graphs, colors
 
 
-def show_default_graph(graph, colors):
-    pos = nx.circular_layout(graph);
-    nx.draw(graph, pos, node_color=colors, with_labels=True)
-    nx.draw_networkx_labels(graph, pos, font_size=12, font_color="black")
+def show_default_graph(graphs, colors):
+
+    cycles = len(graphs)
+
+    centers = nx.Graph()
+    for i in range(cycles):
+        centers.add_node(i)
+
+    centered_pos = nx.spring_layout(centers)
+
+    for graph, color, center in zip(graphs, colors, centered_pos.values()):
+        scale = 0.01 * len(color)
+        pos = nx.circular_layout(graph, scale=scale, center=center)
+        nx.draw(graph, pos, node_color=color, with_labels=True)
+        nx.draw_networkx_labels(graph, pos, font_size=12, font_color="black")
     plt.show()
 
 
