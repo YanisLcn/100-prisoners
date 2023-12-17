@@ -1,7 +1,11 @@
 \section{Probabilités}
 \subsection{Problématique}
 
-	Comment se fait-il que les prisonniers aient un pourcentage de chances de s'en sortir d'environ 30\% ? \\
+	Quelle est la probabilité que les prisonniers survivent ?
+	D'un premier instinct, si chaque prisonnier peut ouvrir la moitié des boîtes, alors la probabilité qu'un prisonnier
+	trouve son numéro parmi les boîtes qu'il a ouvert est de $\frac{1}{2}$. Donc la probabilité que tous trouvent leur
+	numéro respectif est de $$\left(\frac{1}{2}\right)^{100} \approx 0.789 * 10^{-30}$$
+	Y a-t-il une méthode qui permettrait de considérablement augmenter ces chances ?
 
 \subsection{Probabilités de cycles}
 
@@ -9,11 +13,11 @@
 	À partir de cette information, nous sommes maintenant en mesure de calculer la probabilité d'obtenir un cycle de longueur $\frac{n}{2} < k \leq n$ dans une permutation de longueur $n$.
 	Nous ne parlerons pas ici de la probabilité qu'il y ait un cycle de longueur $k$ lorsque $0 < k \leq \frac{n}{2}$.
 
-	Soit les événements aléatoires
-	\begin{center}
-		$E_k$ : "Une permutation de n contient un cycle de longueur k." \\
-		$E'_k$ : "Une permutation de n contient un cycle de longueur au moins k."
-	\end{center}
+	Soient les événements aléatoires
+	\begin{align*}
+		E_k  & : "\text{Une permutation de n contient un cycle de longueur k.}"          \\
+		E'_k & : "\text{Une permutation de n contient un cycle de longueur au moins k.}"
+	\end{align*}
 
 	Muni de la \href{https://fr.wikipedia.org/wiki/Loi_uniforme_discr%C3%A8te#Calcul_d'une_probabilit%C3%A9}{loi uniforme discrète}, on sait que $P(X \in B) = \frac{\#(A \cap B)}{\#A}$, de fait :
 
