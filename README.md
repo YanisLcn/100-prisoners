@@ -16,7 +16,6 @@
 * python3 >= 3.10
 * pip
 * black {python formatter}
-* PyQt6
 
 ## How to run (TODO)
 
