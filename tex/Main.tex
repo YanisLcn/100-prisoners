@@ -1,9 +1,13 @@
 \documentclass[a4paper]{article}
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage{authblk}
 \usepackage{url}
 \usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+\usepackage{tikz} 
 \usepackage[nottoc,numbib]{tocbibind}
 
 \title{100-prisonniers}
@@ -32,10 +36,7 @@
 \section{Lien avec les mathématiques discrètes}
 Faire le lien avec les graphes et les permutations.
 
-\section{Probabilités}
-Comment se fait-il que les prisonniers aient un pourcentage de chances de s'en sortie de 30\% ?
-
-TODO : Yanis
+\input{Probability}
 
 \section{Baby-Step Giant-Step}
 Qu'est-ce que l'algorithme `Baby-Step Giant-Step` ? À quoi sert-il et quel est le lien avec les prisonniers ?
