@@ -25,7 +25,14 @@ def gen_random_graph(size, distinct=True):
 
 
 def random_color(limit):
-    return tuple([rd.random() for _ in range(3)] + [0.7])
+    colortuple = tuple([rd.random() for _ in range(3)] + [0.7])
+    (red, green, blue, _) = colortuple
+    
+    while (red*0.299 + green*0.587 + blue*0.114) > 186:
+        colortuple = tuple([rd.random() for _ in range(3)] + [0.7])
+        (red, green, blue, _) = colortuple
+
+    return colortuple
 
 
 def __sorted_edges(G, size, default_ord, permutation):
@@ -57,7 +64,9 @@ def __sorted_edges(G, size, default_ord, permutation):
 
 
 def show_default_graph(graph, colors):
-    nx.draw_circular(graph, node_color=colors, with_labels=True)
+    pos = nx.circular_layout(graph);
+    nx.draw(graph, pos, node_color=colors, with_labels=True)
+    nx.draw_networkx_labels(graph, pos, font_size=12, font_color="black")
     plt.show()
 
 
