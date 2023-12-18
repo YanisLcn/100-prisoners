@@ -8,5 +8,5 @@ FORMATTER := black
 fmt: $(PY)
 	$(PC) -m $(FORMATTER) $? 
 
-launch: 
+show: 
 	$(PC) $(EXEC)
