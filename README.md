@@ -41,7 +41,7 @@ python3 gui/GraphRepresentation.py
 
 Tester l'énigme des 100 prisonniers et comparer les pourcentages de réussite :
 ```
-python3 tools/100-prisoners.py
+python3 tools/strategies_comparison.py
 ```
 
 Afficher les cycles d'une permutation
