@@ -4,7 +4,7 @@
 
 Bienvenue sur l'annexe numérique de notre projet !
 
-Ce répertoire vise à expliquer à [le problème des 100 prisonniers](https://en.wikipedia.org/wiki/100_prisoners_problem).
+Ce répertoire vise à expliquer le [problème des 100 prisonniers](https://en.wikipedia.org/wiki/100_prisoners_problem).
 Dans ce but, nous avons écrit un PDF ainsi que plusieurs petits programmes permettant
 de mettre en pratique ce que nous avançons.
 
@@ -18,7 +18,7 @@ de mettre en pratique ce que nous avançons.
 
 ## Installation 
 Procédez au clonage du répertoire sur votre machine personelle.
-Si vous avez configurer le `ssh`, alors vous pouvez exécutez la commande suivante afin de cloner le projet.
+Si vous avez configuré le `ssh`, alors vous pouvez exécuter la commande suivante afin de cloner le projet.
 ```
 git clone git@github.com:YanisLcn/100-prisoners.git
 ```
