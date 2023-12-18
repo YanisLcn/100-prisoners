@@ -17,7 +17,8 @@ de mettre en pratique ce que nous avançons.
   * [License](#license)
 
 ## Installation 
-Exécutez la commande suivante afin de cloner le répo. sur votre machine personnelle.
+Procédez au clonage du répertoire sur votre machine personelle.
+Si vous avez configurer le `ssh`, alors vous pouvez exécutez la commande suivante afin de cloner le projet.
 ```
 git clone git@github.com:YanisLcn/100-prisoners.git
 ```
@@ -25,16 +26,18 @@ git clone git@github.com:YanisLcn/100-prisoners.git
 ## Requirements and dependencies 
 Vous aurez besoin de 
 * python3 >= 3.10
+* pip
 
 Ainsi que des dépendances suivantes
-* pip
-* black {python formatter}
+* networkx
+* numpy
+* matplotlib
 
 ## How to run 
 
 Afficher une permutation aléatoire de 100 éléments sous forme de cycles :
 ```
-python3 gui/Main.py
+python3 gui/GraphRepresentation.py
 ```
 
 Tester l'énigme des 100 prisonniers et comparer les pourcentages de réussite :
