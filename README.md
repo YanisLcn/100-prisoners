@@ -8,7 +8,7 @@ Ce répertoire vise à expliquer le [problème des 100 prisonniers](https://en.w
 Dans ce but, nous avons écrit un PDF ainsi que plusieurs petits programmes permettant
 de mettre en pratique ce que nous avançons.
 
-## Table of contents
+## Sommaire
   * [Installation](#installation)
   * [Requirements and dependencies](#requirements-and-dependencies)
   * [How to run](#how-to-run)
