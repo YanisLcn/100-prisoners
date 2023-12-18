@@ -45,6 +45,11 @@ Tester l'énigme des 100 prisonniers et comparer les pourcentages de réussite :
 python3 tools/100-prisoners.py
 ```
 
+Afficher les cycles d'une permutation
+```
+python3 tools/permutation_cycles.py
+```
+
 ## Credits 
 
 Contributors : 
