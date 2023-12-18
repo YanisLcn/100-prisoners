@@ -28,7 +28,6 @@ Vous aurez besoin de
 * python3 >= 3.10
 * pip
 
-Ainsi que des dépendances suivantes
 * networkx
 * numpy
 * matplotlib
