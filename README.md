@@ -32,7 +32,7 @@ Vous aurez besoin de
 * numpy
 * matplotlib
 
-## How to run 
+## Exécution
 
 Afficher une permutation aléatoire de 100 éléments sous forme de cycles :
 ```
