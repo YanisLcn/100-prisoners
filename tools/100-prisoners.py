@@ -1,5 +1,6 @@
 from random import shuffle, sample
-
+import matplotlib.pyplot as plt
+from matplotlib.ticker import PercentFormatter
 
 def look_for_number(target_id, last_paper, remaining_tries):
     """
@@ -37,6 +38,25 @@ def launch_random():
         if i not in random_choices:
             return False
     return True
+
+def show_strategies_comparison(random, optimal):
+    _, ax = plt.subplots()
+
+    strategies = ["aléatoire", "optimale"]
+    probabilities = [random, optimal]
+    bar_colors = ['tab:red', 'tab:blue']
+
+    bars = ax.bar(strategies, probabilities, color=bar_colors)
+
+    ax.set_ylabel('Probabilité')
+    ax.set_ylim(0, 100)
+    ax.set_title('Taux de réussite selon la stratégie')
+
+    ax.yaxis.set_major_formatter(PercentFormatter())
+
+    ax.bar_label(bars, fmt='%.3f%%', label_type='edge', color='black', fontsize=10)
+
+    plt.show()
 
 
 # Initialisation des boîtes et des prisonniers
@@ -79,4 +99,10 @@ print(
     "fois, soit un taux de réussite à hauteur de",
     cmp_opt * 100 / nb_of_iterations,
     "%\n",
+)
+
+print("Voici un diagramme en barres:")
+show_strategies_comparison(
+    cmp_alea * 100 / nb_of_iterations,
+    cmp_opt * 100 / nb_of_iterations
 )
