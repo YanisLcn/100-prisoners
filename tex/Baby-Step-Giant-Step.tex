@@ -9,30 +9,28 @@ La méthode utilisée pour la recherche de cycles dans l'énigme des 100 prisonn
     On dit alors que $x$ est un générateur de $G$ 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Algorithme \href{https://fr.wikipedia.org/wiki/Baby-step_giant-step}{Baby-Step Giant-Step}]
-    \textbf{Entrées :} $g$ un groupe cyclique, $\alpha$ générateur de $g$, $\beta$ élément de $g$ \\
-    \textbf{Sortie :} une valeur $x$ telle que $g^x \equiv \alpha \pmod{\beta}$
 
-    \begin{enumerate}
-        \item  Calculer $m = \sqrt{\beta} +1$.
-        \item Baby-Step :
-              \[
-                \begin{aligned}
+\begin{algorithm}[H]
+    \caption{Algorithme \href{https://fr.wikipedia.org/wiki/Baby-step_giant-step}{Baby-Step Giant-Step}}
+    \SetKwInOut{Input}{Entrée}
+    \Input{$g$ un groupe cyclique, $\alpha$ générateur de $g$, $\beta$ élément de $g$}
+    \SetKwInOut{Output}{Sortie}
+    \Output{une valeur $x$ telle que $g^x \equiv \alpha \pmod{\beta}$} 
+        \begin{enumerate}
+            \item Calculer $m = \sqrt{\beta} +1$.
+            \item Baby-Step:
+                $\begin{aligned}[t]
                     \text{pour } i = 0 \text{ à } m-1: \quad & \text{stocker à l'indice $i$ d'une liste $babyStep$ : } \alpha^i
-                \end{aligned}
-              \]
-        \item Soit $\gamma = \beta$
-        \item Giant-Step :
-              \[
-                \begin{aligned}
+                \end{aligned}$
+            \item Soit $\gamma = \beta$
+            \item Giant-Step:
+                $\begin{aligned}[t]
                     \text{pour } i = 0 \text{ à } m-1: \quad & \text{si } \gamma \text{ est égal à } babyStep[i] \\
-                                                             & \text{alors retourner } i \cdot m + j \\
-                                                             & \text{sinon } \gamma = \gamma \cdot \alpha^{-m}
-                \end{aligned}
-              \]
-    \end{enumerate}
-
-\end{tcolorbox}
+                                                                & \text{alors retourner } i \cdot m + j \\
+                                                                & \text{sinon } \gamma = \gamma \cdot \alpha^{-m}
+                \end{aligned}$
+        \end{enumerate}
+    \end{algorithm}
 
 Cet algorithme permet de trouver le \href{https://fr.wikipedia.org/wiki/Logarithme_discret}{logarithme discret} d'un groupe cyclique $G$,
 c'est-à-dire le plus petit entier naturel $k$ tel que $x = b^k$ avec $b$ générateur de $G$
