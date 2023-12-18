@@ -16,7 +16,7 @@ def look_for_number(target_id, last_paper, remaining_tries):
     )
 
 
-def launch_optimal():
+def optimal_strategy():
     """
     Lance le problème des 100 prisonniers avec la stratégie optimale.
     Renvoie `True` si tous les prisonniers survivent, `False` sinon.
@@ -27,7 +27,7 @@ def launch_optimal():
     return True
 
 
-def launch_random():
+def random_strategy():
     """
     Lance le problème des 100 prisonniers avec la stratégie aléatoire
     Renvoie `True` si tous les prisonniers survivent, `False` sinon.
@@ -58,51 +58,44 @@ def show_strategies_comparison(random, optimal):
 
     plt.show()
 
+def run_strategy(strategy):
+    count = 0
+    for _ in range(nb_of_iterations):
+        shuffle(boxes)
+        if strategy():
+            count += 1
 
-# Initialisation des boîtes et des prisonniers
-nb_of_prisoners = 100
-boxes = [i for i in range(nb_of_prisoners)]
+    percentage = count * 100 / nb_of_iterations
 
-nb_of_iterations = 10000
+    print(
+        "Avec la méthode aléatoire, les prisonniers ont survécu",
+        count,
+        "/",
+        nb_of_iterations,
+        "fois, soit un taux de réussite à hauteur de",
+        percentage,
+        "%\n"
+    )
+    return percentage
 
-print("Testons d'abord la méthode aléatoire :")
+def compare():
+    print("Testons d'abord la méthode aléatoire :")
 
-cmp_alea = 0
-for i in range(nb_of_iterations):
-    shuffle(boxes)
-    if launch_random():
-        cmp_alea += 1
+    random_strategy_percentage = run_strategy(random_strategy)
 
-print(
-    "Avec la méthode aléatoire, les prisonniers ont survécu",
-    cmp_alea,
-    "/",
-    nb_of_iterations,
-    "fois, soit un taux de réussite à hauteur de",
-    cmp_alea * 100 / nb_of_iterations,
-    "%\n",
-)
+    print("Ensuite, la méthode optimale :")
 
-print("Ensuite, la méthode optimale :")
+    optimal_strategy_percentage = run_strategy(optimal_strategy)
 
-cmp_opt = 0
-for i in range(nb_of_iterations):
-    shuffle(boxes)
-    if launch_optimal():
-        cmp_opt += 1
+    print("Voici un diagramme en barres:")
+    show_strategies_comparison(
+        random_strategy_percentage,
+        optimal_strategy_percentage
+    )
 
-print(
-    "Avec la méthode optimale, les prisonniers ont survécu",
-    cmp_opt,
-    "/",
-    nb_of_iterations,
-    "fois, soit un taux de réussite à hauteur de",
-    cmp_opt * 100 / nb_of_iterations,
-    "%\n",
-)
-
-print("Voici un diagramme en barres:")
-show_strategies_comparison(
-    cmp_alea * 100 / nb_of_iterations,
-    cmp_opt * 100 / nb_of_iterations
-)
+if __name__ == "__main__":
+    # Initialisation des boîtes et des prisonniers
+    nb_of_iterations=10000
+    nb_of_prisoners=100
+    boxes = [i for i in range(nb_of_prisoners)]
+    compare()
