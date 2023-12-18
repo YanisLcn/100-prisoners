@@ -3,10 +3,13 @@
 La méthode utilisée pour la recherche de cycles dans l'énigme des 100 prisonniers peut
 être appliquée dans le domaine de la cryptographie
 
-L'algorithme \href{https://fr.wikipedia.org/wiki/Baby-step_giant-step}{Baby-Step Giant-Step}
-se déroule de la façon suivante : 
+\begin{tcolorbox}
+    Un groupe $G$ est cyclique s'il existe $x \in G$ 
+    tel que tout élément de $G$ est un multiple de $x$.
+    On dit alors que $x$ est un générateur de $G$ 
+\end{tcolorbox}
 
-\begin{tcolorbox}[title=Algorithme Baby-Step Giant-Step]
+\begin{tcolorbox}[title=Algorithme \href{https://fr.wikipedia.org/wiki/Baby-step_giant-step}{Baby-Step Giant-Step}]
     \textbf{Entrées :} $g$ un groupe cyclique, $\alpha$ générateur de $g$, $\beta$ élément de $g$ \\
     \textbf{Sortie :} une valeur $x$ telle que $g^x \equiv \alpha \pmod{\beta}$
 
@@ -30,3 +33,14 @@ se déroule de la façon suivante :
     \end{enumerate}
 
 \end{tcolorbox}
+
+Cet algorithme permet de trouver le \href{https://fr.wikipedia.org/wiki/Logarithme_discret}{logarithme discret} d'un groupe cyclique $G$,
+c'est-à-dire le plus petit entier naturel $k$ tel que $x = b^k$ avec $b$ générateur de $G$
+et $x$ élément quelconque de $G$.
+
+Couplé à l'\href{https://fr.wikipedia.org/wiki/Exponentiation_rapide}{exponentiation rapide}, le logarithme discret sert à la cryptographie à clé publique,
+la combinaison des deux objets produisant l'asymétrie recherchée dans le contexte de l'échange de clés.
+
+Si on applique le même type de recherche des cycles (cf \href{https://github.com/YanisLcn/100-prisoners/blob/master/tools/permutation_cycles.py}{Annexe}) que pour le problème des 100 prisonniers,
+puis que l'on applique l'algorithme Baby-Step Giant-Step sur les cycles optimaux trouvés, on obtient
+alors leurs logarithmes discrets respectifs.
