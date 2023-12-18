@@ -34,7 +34,12 @@ Ainsi que des dépendances suivantes
 
 Afficher une permutation aléatoire de 100 éléments sous forme de cycles :
 ```
-cd gui && make show && cd ..
+python3 gui/Main.py
+```
+
+Tester l'énigme des 100 prisonniers et comparer les pourcentages de réussite :
+```
+python3 tools/100-prisoners.py
 ```
 
 ## Credits 
