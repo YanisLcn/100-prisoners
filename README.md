@@ -23,7 +23,7 @@ Si vous avez configuré le `ssh`, alors vous pouvez exécuter la commande suivan
 git clone git@github.com:YanisLcn/100-prisoners.git
 ```
 
-## Requirements and dependencies 
+## Dépendances 
 Vous aurez besoin de 
 * python3 >= 3.10
 * pip
