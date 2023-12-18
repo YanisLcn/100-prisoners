@@ -9,10 +9,11 @@
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{graphicx}
+\usepackage{listings}
 \usepackage[boxruled]{algorithm2e}
 \usepackage[nottoc,numbib]{tocbibind}
 
-\title{100-prisonniers}
+\title{Le problème des 100-prisonniers}
 \date{27/11/2023}
 
 \author{GUETTEVILLE Nathan}
@@ -25,6 +26,23 @@
 \begin{document}
 
 \maketitle
+
+\noindent Annexe numérique : \url{https://github.com/YanisLcn/100-prisoners/blob/master/} \\
+
+\noindent Afficher une permutation aléatoire de 100 éléments sous forme de cycles :
+\begin{lstlisting}[language=bash]
+$ python3 gui/GraphRepresentation.py
+\end{lstlisting} 
+
+\noindent Tester l'énigme des 100 prisonniers et comparer les pourcentages de réussite :
+\begin{lstlisting}[language=bash]
+$ python3 tools/strategies_comparison.py
+\end{lstlisting}
+
+\noindent Afficher les cycles d'une permutation
+\begin{lstlisting}[language=bash]
+$ python3 tools/permutation_cycles.py
+\end{lstlisting} 
 
 \pagenumbering{gobble}
 \pagenumbering{arabic}
