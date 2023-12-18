@@ -1,0 +1,32 @@
+\section{Baby-Step Giant-Step}
+
+La méthode utilisée pour la recherche de cycles dans l'énigme des 100 prisonniers peut
+être appliquée dans le domaine de la cryptographie
+
+L'algorithme \href{https://fr.wikipedia.org/wiki/Baby-step_giant-step}{Baby-Step Giant-Step}
+se déroule de la façon suivante : 
+
+\begin{tcolorbox}[title=Algorithme Baby-Step Giant-Step]
+    \textbf{Entrées :} $g$ un groupe cyclique, $\alpha$ générateur de $g$, $\beta$ élément de $g$ \\
+    \textbf{Sortie :} une valeur $x$ telle que $g^x \equiv \alpha \pmod{\beta}$
+
+    \begin{enumerate}
+        \item  Calculer $m = \sqrt{\beta} +1$.
+        \item Baby-Step :
+              \[
+                \begin{aligned}
+                    \text{pour } i = 0 \text{ à } m-1: \quad & \text{stocker à l'indice $i$ d'une liste $babyStep$ : } \alpha^i
+                \end{aligned}
+              \]
+        \item Soit $\gamma = \beta$
+        \item Giant-Step :
+              \[
+                \begin{aligned}
+                    \text{pour } i = 0 \text{ à } m-1: \quad & \text{si } \gamma \text{ est égal à } babyStep[i] \\
+                                                             & \text{alors retourner } i \cdot m + j \\
+                                                             & \text{sinon } \gamma = \gamma \cdot \alpha^{-m}
+                \end{aligned}
+              \]
+    \end{enumerate}
+
+\end{tcolorbox}
